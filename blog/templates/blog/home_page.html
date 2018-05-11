@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Welcome to Sage's Blog</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Hi. This is the website of Fc Barcelona Football Club </h1>
+
+<!-- Blog Post -->
+ <h2>Forca Barca</h2>
+ <p> Our 2016-2017 smester --The Champions League 1/8 final round happened in the camp nou. A historical big reversal made all the people in the world feel amazed that Barcelona rely on score in 6-1 win the Paris Saint Germain football club, and with a total score of 6-5 blockbuster comeback qBarcauarter finals.</p>
+ <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526021287236&di=602db0a7caf5b5a8377fdc5b1fc5a1e0&imgtype=0&src=http%3A%2F%2Fdesk.fd.zol-img.com.cn%2Ft_s960x600c5%2Fg5%2FM00%2F02%2F00%2FChMkJ1aPja6IdROKAAFpMNJqdMcAAHHKgOhFZYAAWlI517.jpg"></p>
+ <p>The best football player in the world
+ 里奥·梅西（Lionel Messi），1987年6月24日出生于阿根廷圣菲省罗萨里奥市，阿根廷足球运动员，司职前锋，现效力于巴塞罗那足球俱乐部。
+2000年，梅西加入巴塞罗那俱乐部。2005年，阿根廷青年队夺取世青赛冠军，梅西赢得了金球奖和金靴奖双项大奖。2007年4月18日，梅西在国王杯半决赛对赫塔菲时复制了马拉多纳在世界杯上的连过五人进球。2008年北京奥运会上，梅西随阿根廷国奥队夺取了金牌。2009年底，他当选了欧洲足球先生和世界足球先生。梅西2008-2009赛季率领球队连夺西甲、国王杯和欧冠三个冠军。2011年，梅西获得首届国际足联金球奖，还获得了欧足联欧洲最佳球员。2013年，他以46粒联赛进球的成绩第三次获得欧洲金靴奖奖杯。2014年，梅西随阿根廷队参加2014巴西世界杯。2014年巴西世界杯上，获得世界杯亚军.2014年12月20日，梅西被IFFHS评为2013年世界职业联赛的最佳射手奖.2015年8月，当选欧洲超级杯最佳球员。2015年8月27日，获得欧洲最佳球员.2016年1月12日，梅西荣膺2015年度FIFA金球奖，五度得奖创纪录。2016年6月，在连续三次决赛（2014年世界杯、2015年美洲杯、2016年美洲杯）失利后，梅西正式宣布将退出阿根廷国家队。8月13日，梅西正式回归阿根廷国家队。</p>
+<p><img src="http://img1.gtimg.com/sports/pics/hv1/106/31/2093/136105336.jpg"></p>
+<P></P>
+<button>Like</button>Barca
+ <h2>Leave a Comment</h2>
+ <form action="{% url 'blog:home_page' %}" method="POST">
+     {% csrf_token %}
+     <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+     <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+     <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+ User {{comment.user}} says: {{comment.commet}}
+
+
+ <h2>All Comments</h2>
+ {% for each_comment in comments %}
+ User {{each_comment.user}} says: {{each_comment.comment}} <hr>
+{% endfor %}
+</body>
+</html>
